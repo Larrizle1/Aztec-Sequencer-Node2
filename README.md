@@ -97,7 +97,7 @@ sudo ufw enable
 # Sequencer
 sudo ufw allow 40400
 sudo ufw allow 40500
-sudo ufw allow 8080
+sudo ufw allow 8081
 ```
 
 ## 9. Sequencer Node
@@ -108,13 +108,14 @@ screen -S aztec
 
 * Start the Node
 ```
-aztec start --node --archiver --sequencer \
+aztec start --node --archiver --sequencer --port 8081 \
   --network alpha-testnet \
   --l1-rpc-urls RPC_URL  \
   --l1-consensus-host-urls BEACON_URL \
   --sequencer.validatorPrivateKey 0xYourPrivateKey \
   --sequencer.coinbase 0xYourAddress \
   --p2p.p2pIp IP
+
 ```
 Replace the following variables before you Run Node:
 * `RPC_URL` & `BEACON_URL`: Step 4
